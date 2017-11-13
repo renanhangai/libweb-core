@@ -4,5 +4,8 @@
 	"description": "Core for libweb",
 	"type": "library",
 	"license": "MIT",
-	"require": {}
+	"require": {},
+	"autoload": {
+		"classmap": ["src/Config.php"]
+	}
 }
