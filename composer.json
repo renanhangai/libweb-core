@@ -1,11 +1,13 @@
 {
 	"name": "renanhangai/libweb-core",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Core for libweb",
 	"type": "library",
 	"license": "MIT",
 	"require": {},
 	"autoload": {
-		"classmap": ["src/Config.php"]
+		"classmap": [
+			"src/Config.php"
+		]
 	}
 }
