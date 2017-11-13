@@ -1,5 +1,6 @@
 {
     "name": "renanhangai/libweb-core",
+	"version": "0.0.0",
     "description": "Core for libweb",
     "type": "library",
     "license": "MIT",
