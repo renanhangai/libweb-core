@@ -34,7 +34,7 @@ class Debug {
 		$debugbar->addCollector( new \DebugBar\DataCollector\RequestDataCollector() );
 		$debugbar->addCollector( new \DebugBar\DataCollector\TimeDataCollector() );
 		$debugbar->addCollector( new \DebugBar\DataCollector\MemoryCollector() );
-		$debugbar->addCollector( new debug\ExceptionsCollector() );
+		$debugbar->addCollector( new core\debug\ExceptionsCollector() );
 		
 		// Config collector
 		$debugbar->addCollector( new \DebugBar\DataCollector\ConfigCollector( Config::raw() ) );
@@ -64,7 +64,7 @@ class Debug {
 	}
 	public static function disableDebugDB() {
 		if ( self::$debugPDO )
-			self::$debugPDO->setAttribute(\PDO::ATTR_STATEMENT_CLASS, array( "LibWeb\\debug\\PDOStatementDisableLog", array() ) );
+			self::$debugPDO->setAttribute(\PDO::ATTR_STATEMENT_CLASS, array( "LibWeb\\core\\debug\\PDOStatementDisableLog", array() ) );
 		self::$debugPDO = false;
 	}
 	/// Collect the debug data
