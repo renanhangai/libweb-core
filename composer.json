@@ -7,7 +7,8 @@
 	"require": {},
 	"autoload": {
 		"classmap": [
-			"src/Config.php"
+			"src/Config.php",
+			"src/Debug.php"
 		]
 	}
 }
