@@ -1,5 +1,5 @@
 <?php
-namespace LibWeb\debug;
+namespace LibWeb\core\debug;
 
 /**
  * DebugExeption collector
