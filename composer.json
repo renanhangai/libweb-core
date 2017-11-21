@@ -1,17 +1,17 @@
 {
-    "name": "renanhangai/libweb-core",
-    "version": "0.1.1",
-    "description": "Core for libweb",
-    "type": "library",
-    "license": "MIT",
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "LibWeb\\core\\": "src/core"
-        },
-        "classmap": [
-            "src/Config.php",
-            "src/Debug.php"
-        ]
-    }
+	"name": "renanhangai/libweb-core",
+	"version": "0.1.2",
+	"description": "Core for libweb",
+	"type": "library",
+	"license": "MIT",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"LibWeb\\core\\": "src/core"
+		},
+		"classmap": [
+			"src/Config.php",
+			"src/Debug.php"
+		]
+	}
 }
