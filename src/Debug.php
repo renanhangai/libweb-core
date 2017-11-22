@@ -18,7 +18,7 @@ class Debug {
 			return false;
 		}
 		if ( !class_exists( '\\DebugBar\\DebugBar' ) ) {
-			trigger_error( "Please install maximebf/debugbar", E_USER_NOTICE ); 
+			// trigger_error( "Please install maximebf/debugbar", E_USER_NOTICE ); 
 			self::$debugbar = false;
 			return false;			
 		}
@@ -91,7 +91,7 @@ class Debug {
 	public static function dumpJs( $base ) {
 		if ( self::_setup() ) {
 			header( "content-type: text/javascript" );
-			self::$renderer->setOpenHandlerUrl( $base.'_debug/handler.json' );
+			self::$renderer->setOpenHandlerUrl( $base.'/_debug/handler.json' );
 			self::$renderer->dumpJsAssets();
 
 			echo "\nPhpDebugBar.$.noConflict(true);\nPhpDebugBar.$( document ).ready(function() {\n\tPhpDebugBar.$(document.body).append(".json_encode( self::$renderer->render() ).");\n});";
@@ -101,13 +101,13 @@ class Debug {
 	/**
 	 * Dump the CSS
 	 */
-	public static function dumpCss() {
+	public static function dumpCss( $base ) {
 		if ( self::_setup() ) {
 			header( "content-type: text/css" );
 			ob_start();
 			self::$renderer->dumpCssAssets();
 			$content = ob_get_clean();
-			$content = str_replace( "../fonts/fontawesome-webfont", "./_debug/fontawesome-webfont", $content );
+			$content = str_replace( "../fonts/fontawesome-webfont", $base."/_debug/fontawesome-webfont", $content );
 			echo $content;
 		}
 		exit;
