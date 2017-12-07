@@ -107,7 +107,7 @@ class Debug {
 			ob_start();
 			self::$renderer->dumpCssAssets();
 			$content = ob_get_clean();
-			$content = str_replace( "../fonts/fontawesome-webfont", $base."/_debug/fontawesome-webfont", $content );
+			$content = str_replace( "../fonts/fontawesome-webfont", $base."_debug/fontawesome-webfont", $content );
 			echo $content;
 		}
 		exit;
