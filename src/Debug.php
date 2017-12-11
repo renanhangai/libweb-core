@@ -91,7 +91,10 @@ class Debug {
 	public static function dumpJs( $base ) {
 		if ( self::_setup() ) {
 			header( "content-type: text/javascript" );
-			self::$renderer->setOpenHandlerUrl( $base.'/_debug/handler.json' );
+			$urlBase = $base;
+			if ( Config::get( "cors" ) )
+				$urlBase = ( @$_SERVER["REQUEST_SCHEME"]  ?: "http" )."://".$_SERVER["HTTP_HOST"]. $base ;
+			self::$renderer->setOpenHandlerUrl( $urlBase.'/_debug/handler.json' );
 			self::$renderer->dumpJsAssets();
 
 			echo "\nPhpDebugBar.$.noConflict(true);\nPhpDebugBar.$( document ).ready(function() {\n\tPhpDebugBar.$(document.body).append(".json_encode( self::$renderer->render() ).");\n});";
